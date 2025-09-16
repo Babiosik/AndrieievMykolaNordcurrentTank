@@ -1,0 +1,204 @@
+{
+    "name": "PlayerInputActions",
+    "maps": [
+        {
+            "name": "CasualMove",
+            "id": "743616aa-ffc1-481a-a26a-104753d3cacf",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "46d30b5b-6aef-49b3-af6a-49ee3ca0b5a2",
+                    "expectedControlType": "Vector2",
+                    "processors": "NormalizeVector2",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "WASD",
+                    "id": "11b680f5-b829-4867-ba1f-38904387f167",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "9d51a15d-7314-4a77-a7b9-63e7de675bfd",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SimpleScheme",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "e37bd623-597b-4b74-a218-6e05674bedda",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SimpleScheme",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "49da6733-eecc-494d-994b-555bbe54ac89",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SimpleScheme",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "c89b9154-4c36-46e3-bf5c-4901f6ad9640",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SimpleScheme",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "TankMove",
+            "id": "e71c3959-bd27-4d68-96c1-6f9623513e0f",
+            "actions": [
+                {
+                    "name": "LeftTruck",
+                    "type": "Value",
+                    "id": "c3b3de1f-2be2-4260-ad53-69a206b3acaa",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "RightTruck",
+                    "type": "Value",
+                    "id": "8d25b8a9-847a-45fe-bd84-991be038627b",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "AZ",
+                    "id": "4f95e688-d47e-4c82-a6c1-82125569d4c4",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftTruck",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "44f30194-d050-4a24-b0f4-297ad4dd6a46",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SimpleScheme",
+                    "action": "LeftTruck",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "6da9ccbd-14ff-4211-a043-17ada2a178af",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SimpleScheme",
+                    "action": "LeftTruck",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "SX",
+                    "id": "c04e183d-da8d-4353-970f-fb15ecb8034e",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightTruck",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "positive",
+                    "id": "94aac3e5-b1a0-43e2-8e10-4203a7593349",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SimpleScheme",
+                    "action": "RightTruck",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "negative",
+                    "id": "bf632543-1183-4363-9304-c5ffec2a5a39",
+                    "path": "<Keyboard>/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "SimpleScheme",
+                    "action": "RightTruck",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Tower",
+            "id": "016fdca5-ce7f-4832-b637-a79d2d1beb2d",
+            "actions": [
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "cf2741f3-c6d8-4ae4-b9ce-5f7171d424a7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "44368418-3a11-4cfc-91c2-b58334d99350",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "SimpleScheme",
+            "bindingGroup": "SimpleScheme",
+            "devices": []
+        }
+    ]
+}
