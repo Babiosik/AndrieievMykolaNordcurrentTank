@@ -1,3 +1,4 @@
+using Tanks;
 using UnityEngine;
 
 namespace Spawners
@@ -16,7 +17,9 @@ namespace Spawners
         {
             int randomIndex = Random.Range(0, tankPrefabs.Length);
             Vector2 spawnPoint = GetSpawnPoint();
-            return Instantiate(tankPrefabs[randomIndex], spawnPoint, Quaternion.Euler(-spawnPoint.normalized));
+            var go = Instantiate(tankPrefabs[randomIndex], spawnPoint, Quaternion.Euler(-spawnPoint.normalized));
+            go.AddComponent<TankDamageableComponent>().SetFactory(this);
+            return go;
         }
 
         protected virtual void RespawnTank(GameObject tank)
