@@ -1,6 +1,6 @@
-using Player;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace UI
 {
@@ -10,10 +10,15 @@ namespace UI
     public class SwitchMovementStartegy : MonoBehaviour
     {
         [SerializeField] private MovementStrategyType movementStrategyType = MovementStrategyType.Casual;
-        [SerializeField] private PlayerInput playerInput;
 
         private Toggle toggle;
+        private IPlayerInputService playerInputService;
 
+        [Inject]
+        public void Construct(IPlayerInputService playerInputService)
+        {
+            this.playerInputService = playerInputService;
+        }
         private void Awake()
         {
             toggle = GetComponent<Toggle>();
@@ -31,10 +36,10 @@ namespace UI
 
         private void OnValueChanged(bool isOn)
         {
-            if (isOn)
-            {
-                playerInput.SetInputMoveStrategy(movementStrategyType);
-            }
+            if (!isOn)
+                return;
+
+            playerInputService.SetInputMoveStrategy(movementStrategyType);
         }
     }
 }
