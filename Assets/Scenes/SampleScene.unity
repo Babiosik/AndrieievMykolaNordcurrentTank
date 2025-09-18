@@ -152,9 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00706d7ebd4a4134dbb96a0d3cb12ef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPrefabs: []
+  tankPrefabs:
+  - {fileID: 1611875672272418300, guid: ee03d1872bc4ef341b27aa9af7fa82d2, type: 3}
   respawnTime: 1
-  spawnCount: 0
+  spawnCount: 4
+  centerOffset: {x: 0, y: 0}
+  areaSize: {x: 34, y: 24}
+  borderOffset: 2
 --- !u!114 &108185487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42897,6 +42901,7 @@ GameObject:
   - component: {fileID: 1260743730}
   - component: {fileID: 1260743729}
   - component: {fileID: 1260743728}
+  - component: {fileID: 1260743731}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -44454,6 +44459,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1260743731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260743726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a3631e928b37541a75cd6fcef05e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1526397777
 GameObject:
   m_ObjectHideFlags: 0

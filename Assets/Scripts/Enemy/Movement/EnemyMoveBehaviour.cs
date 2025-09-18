@@ -4,16 +4,14 @@ using UnityEngine;
 
 namespace Enemy.Movement
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(TankMovement))]
+    [RequireComponent(typeof(TankMovement))]
     public abstract class EnemyMoveBehaviour : MonoBehaviour
     {
-        protected Rigidbody2D rb;
         protected TankMovement tankMovement;
         protected EnemyMoveStateMachine stateMachine; 
 
         protected virtual void Awake()
         {
-            rb = GetComponent<Rigidbody2D>();
             tankMovement = GetComponent<TankMovement>();
         }
 
