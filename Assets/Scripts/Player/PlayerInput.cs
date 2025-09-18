@@ -3,12 +3,14 @@ using Player.MovementStrategy;
 using Tanks;
 using UI;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Player
 {
     public class PlayerInput : MonoBehaviour
     {
         [SerializeField] private TankMovement tankMovement;
+        [SerializeField] private TankShooting tankShooting;
         private PlayerInputActions playerInputActions;
         private IInputMoveStrategy inputMoveStrategy;
         private Dictionary<MovementStrategyType, IInputMoveStrategy> inputMoveStrategiesDict = new Dictionary<MovementStrategyType, IInputMoveStrategy>();
@@ -24,11 +26,13 @@ namespace Player
         private void OnEnable()
         {
             playerInputActions.Enable();
+            playerInputActions.Tower.Shoot.performed += OnShoot;
         }
 
         private void OnDisable()
         {
             playerInputActions.Disable();
+            playerInputActions.Tower.Shoot.performed -= OnShoot;
         }
 
         private void OnDestroy()
@@ -42,6 +46,11 @@ namespace Player
                 throw new System.Exception("TankMovement is null");
 
             tankMovement.DirectionVector = inputMoveStrategy.GetMoveVector(playerInputActions);
+        }
+
+        private void OnShoot(InputAction.CallbackContext context)
+        {
+            tankShooting?.Shoot();
         }
 
         public void SetInputMoveStrategy(MovementStrategyType moveStrategy)
