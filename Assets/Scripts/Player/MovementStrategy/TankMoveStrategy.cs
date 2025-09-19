@@ -13,6 +13,7 @@ namespace Player.MovementStrategy
             
             outputVector.x = leftTruck - rightTruck;
             outputVector.y = leftTruck + rightTruck;
+            outputVector.Normalize();
             
             return outputVector;
         }

@@ -1,3 +1,4 @@
+using Effects;
 using Tanks;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ namespace Spawners
     public abstract class TankFactory : MonoBehaviour
     {
         [SerializeField] private GameObject[] tankPrefabs;
+        [SerializeField] private EffectSpawner destroyEffectSpawner;
         protected abstract Vector2 GetSpawnPoint();
 
         protected virtual void Start()
@@ -32,6 +34,8 @@ namespace Spawners
 
         public virtual void DestroyTank(GameObject tank)
         {
+            if (destroyEffectSpawner != null)
+                destroyEffectSpawner.GetEffect(tank.transform);
             tank.SetActive(false);
         }
 
