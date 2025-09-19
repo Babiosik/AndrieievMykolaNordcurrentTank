@@ -17,7 +17,7 @@ namespace Spawners
         {
             int randomIndex = Random.Range(0, tankPrefabs.Length);
             Vector2 spawnPoint = GetSpawnPoint();
-            var go = Instantiate(tankPrefabs[randomIndex], spawnPoint, Quaternion.Euler(-spawnPoint.normalized));
+            var go = Instantiate(tankPrefabs[randomIndex], spawnPoint, GetRotation(spawnPoint));
             go.AddComponent<TankDamageableComponent>().SetFactory(this);
             return go;
         }
@@ -26,13 +26,20 @@ namespace Spawners
         {
             Vector2 spawnPoint = GetSpawnPoint();
             tank.transform.position = spawnPoint;
-            tank.transform.rotation = Quaternion.Euler(-spawnPoint.normalized);
+            tank.transform.rotation = GetRotation(spawnPoint);
             tank.SetActive(true);
         }
 
         public virtual void DestroyTank(GameObject tank)
         {
             tank.SetActive(false);
+        }
+
+        private Quaternion GetRotation(Vector2 position)
+        {
+            Vector2 dir = Vector2.zero - position;
+            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            return Quaternion.Euler(0, 0, angle - 90);
         }
     }
 }

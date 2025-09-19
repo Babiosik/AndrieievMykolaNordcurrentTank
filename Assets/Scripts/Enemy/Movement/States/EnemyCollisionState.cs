@@ -20,7 +20,10 @@ namespace Enemy.Movement.States
             float side = Mathf.Sign(Vector3.Cross(inDir, tangent).z);
 
             // Possible add backward move for more realistic pilot behavior
-            Direction = side > 0 ? Vector2.left : Vector2.right;
+            Vector2 direction = side > 0 ? Vector2.left : Vector2.right;
+            direction.y = -.1f;
+
+            Direction = direction;
         }
     }
 }
