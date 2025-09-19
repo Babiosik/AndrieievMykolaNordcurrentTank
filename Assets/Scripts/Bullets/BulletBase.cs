@@ -7,7 +7,7 @@ namespace Bullets
     {
         [SerializeField] protected float speed = 10f;
 
-        protected SimpleBulletPool bulletPool;
+        protected BulletSpawner bulletPool;
         protected Collider2D collider;
 
         protected Rigidbody2D Rigidbody2D { get; private set; }
@@ -28,11 +28,13 @@ namespace Bullets
             ReturnToPool();
         }
 
-        public virtual void SetPool(SimpleBulletPool pool) => bulletPool = pool;
-        public abstract void ReturnToPool();
+        public virtual void SetPool(BulletSpawner pool) => bulletPool = pool;
+        public virtual void ReturnToPool() => bulletPool.ReturnToPool(this);
         public virtual void SetShooter(Collider2D shooter)
         {
             Physics2D.IgnoreCollision(shooter, collider);
         }
+
+
     }
 }

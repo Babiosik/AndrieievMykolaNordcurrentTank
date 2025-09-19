@@ -6,6 +6,7 @@ namespace Bullets
     public abstract class BulletSpawner : ScriptableObject
     {
         public abstract BulletBase GetBullet();
+        public abstract void ReturnToPool(BulletBase bullet);
     }
 
     public abstract class BulletBasePool<T> : BulletSpawner where T : BulletBase
@@ -18,6 +19,11 @@ namespace Bullets
         public override BulletBase GetBullet()
         {
             return Pool.Get();
+        }
+
+        public override void ReturnToPool(BulletBase bullet)
+        {
+            Pool.Release((T)bullet);
         }
 
         protected abstract T CreatePooledItem();
