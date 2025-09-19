@@ -5,8 +5,10 @@ namespace Tanks
     [RequireComponent(typeof(Rigidbody2D))]
     public class TankMovement : MonoBehaviour
     {
+        [Tooltip("In units/sec")]
         [SerializeField] protected float moveSpeed;
-        [SerializeField] protected float turnSpeed;
+        [Tooltip("In units")]
+        [SerializeField] protected float turnRadius;
 
         protected Rigidbody2D rb;
         protected Vector2 directionMove;
@@ -24,8 +26,9 @@ namespace Tanks
 
         protected virtual void DoMove()
         {
+            float angSpeedDeg = -directionMove.x * moveSpeed / turnRadius * Mathf.Rad2Deg;
+            rb.MoveRotation(rb.rotation + angSpeedDeg * Time.fixedDeltaTime);
             rb.MovePosition(rb.position + (Vector2)transform.up * directionMove.y * moveSpeed * Time.fixedDeltaTime);
-            rb.MoveRotation(rb.rotation - directionMove.x * turnSpeed * Time.fixedDeltaTime);
         }
 
         public Vector2 DirectionVector { set => directionMove = value; }

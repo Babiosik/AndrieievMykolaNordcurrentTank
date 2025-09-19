@@ -154,10 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankPrefabs:
   - {fileID: 1611875672272418300, guid: ee03d1872bc4ef341b27aa9af7fa82d2, type: 3}
-  - {fileID: 4962997060332177288, guid: ed193fd951506334380ada2a783cd45f, type: 3}
-  - {fileID: 4962997060332177288, guid: 4030a4367f6ba74489bfd90fe868ff02, type: 3}
   respawnTime: 1
-  spawnCount: 4
+  spawnCount: 20
   centerOffset: {x: 0, y: 0}
   areaSize: {x: 34, y: 24}
   borderOffset: 2
