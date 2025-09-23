@@ -20,9 +20,10 @@ Author: Andrieiev Mykola
 | Add sounds | 1h |
 | Resolve spawn conflict | 2h |
 | Last polishing | 1h |
+| Build, test, publish | 3h |
 
 ### Total time spent
-19h
+22h
 
 # Comments
 
