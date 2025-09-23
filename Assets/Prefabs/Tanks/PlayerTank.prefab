@@ -24,6 +24,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 3255012085485071599, guid: 77409421bb992df41a4087c041f64cc6, type: 3}
+      propertyPath: Priority
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255012085485071599, guid: 77409421bb992df41a4087c041f64cc6, type: 3}
+      propertyPath: MaxDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255012085485071599, guid: 77409421bb992df41a4087c041f64cc6, type: 3}
+      propertyPath: MinDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255012085485071599, guid: 77409421bb992df41a4087c041f64cc6, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3790304757528345888, guid: 77409421bb992df41a4087c041f64cc6, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -87,6 +103,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2970983887759605750, guid: 77409421bb992df41a4087c041f64cc6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 54292372660220064}
+    - targetCorrespondingSourceObject: {fileID: 2970983887759605750, guid: 77409421bb992df41a4087c041f64cc6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8089500016828120680}
   m_SourcePrefab: {fileID: 100100000, guid: 77409421bb992df41a4087c041f64cc6, type: 3}
 --- !u!1 &3943188885974492003 stripped
 GameObject:
@@ -105,3 +124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804f147a748dc8543bde424abab6ba48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &-8089500016828120680
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3943188885974492003}
+  m_Enabled: 1

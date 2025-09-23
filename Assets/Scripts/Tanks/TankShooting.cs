@@ -7,6 +7,7 @@ namespace Tanks
     {
         [SerializeField] private BulletSpawner bulletSpawner;
         [SerializeField] private Transform firePivot;
+        [SerializeField] private AudioSource shootAudio;
 
         private Collider2D collider;
 
@@ -21,6 +22,7 @@ namespace Tanks
             bullet.SetShooter(collider);
             bullet.transform.position = firePivot.position;
             bullet.transform.rotation = firePivot.rotation;
+            shootAudio.Play();
         }
     }
 }

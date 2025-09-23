@@ -10,12 +10,22 @@ namespace Tanks
         [Tooltip("In units")]
         [SerializeField] protected float turnRadius;
 
+        [SerializeField] protected AudioSource engineSoundSource;
+        [SerializeField] protected float lowerPitch = 0.55f;
+        [SerializeField] protected float higherPitch = 0.8f;
+
         protected Rigidbody2D rb;
         protected Vector2 directionMove;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+        }
+
+        private void Update()
+        {
+            engineSoundSource.pitch = Mathf.Lerp(lowerPitch, higherPitch, directionMove.sqrMagnitude);
+            Debug.Log(engineSoundSource.pitch);
         }
 
         private void FixedUpdate()
