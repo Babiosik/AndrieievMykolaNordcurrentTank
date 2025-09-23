@@ -1,4 +1,4 @@
-using Player;
+using Tanks;
 using UnityEngine;
 using Utilities;
 using Zenject;
@@ -10,7 +10,7 @@ namespace Spawners
         [SerializeField] private float respawnTime = 1f;
         [SerializeField] private Transform[] spawnPoints;
 
-        private GameObject playerTank;
+        private TankMediator playerTank;
         private Timer respawnTimer;
         private ICameraService cameraService;
         private IPlayerInputService playerInputService;
@@ -32,15 +32,15 @@ namespace Spawners
             respawnTimer = new CountdownTimer(respawnTime, null, OnTankRespawned);
         }
 
-        protected override GameObject SpawnTank()
+        protected override TankMediator SpawnTank()
         {
             playerTank = base.SpawnTank();
             cameraService.SetFollow(playerTank.transform);
-            playerInputService.SetTankMediator(playerTank.GetComponent<TankMediator>());
+            playerInputService.SetTankMediator(playerTank);
             return playerTank;
         }
 
-        public override void DestroyTank(GameObject tank)
+        public override void DestroyTank(TankMediator tank)
         {
             base.DestroyTank(playerTank = tank);
             respawnTimer.Start();

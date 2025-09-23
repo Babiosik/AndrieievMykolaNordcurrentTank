@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using Player;
 using Player.MovementStrategy;
+using Tanks;
 using UI;
 using UnityEngine.InputSystem;
 
@@ -42,17 +42,17 @@ namespace Zenject
 
         private void OnShoot(InputAction.CallbackContext context)
         {
-            tankMediator?.TankShooting?.Shoot();
+            tankMediator?.Shooting?.Shoot();
         }
 
         public void Tick()
         {
             if (tankMediator == null)
                 return;
-            if (tankMediator.TankMovement == null)
+            if (tankMediator.Movement == null)
                 throw new System.Exception("TankMovement is null");
 
-            tankMediator.TankMovement.DirectionVector = inputMoveStrategy.GetMoveVector(playerInputActions);
+            tankMediator.Movement.DirectionVector = inputMoveStrategy.GetMoveVector(playerInputActions);
         }
 
         public void SetInputMoveStrategy(MovementStrategyType moveStrategy)

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Tanks;
 using UnityEngine;
 using UnityEngine.Pool;
 using Utilities;
@@ -15,7 +16,7 @@ namespace Spawners
         [SerializeField] private Vector2 areaSize = Vector2.one;
         [SerializeField] private float borderOffset = 1f;
 
-        private IObjectPool<GameObject> tanksPool;
+        private IObjectPool<TankMediator> tanksPool;
         private IObjectPool<CountdownTimer> respawnTimerPool;
         private List<Timer> activeTimers = new List<Timer>();
 
@@ -42,13 +43,13 @@ namespace Spawners
 
         protected override void Start()
         {
-            tanksPool = new ObjectPool<GameObject>(SpawnTank, RespawnTank, base.DestroyTank, null, false, spawnCount);
+            tanksPool = new ObjectPool<TankMediator>(SpawnTank, RespawnTank, base.DestroyTank, null, false, spawnCount);
             respawnTimerPool = new ObjectPool<CountdownTimer>(CreateTimer, null, null, null, false, spawnCount);
             for (int i = 0; i < spawnCount; i++)
                 tanksPool.Get();
         }
 
-        public override void DestroyTank(GameObject tank)
+        public override void DestroyTank(TankMediator tank)
         {
             tanksPool.Release(tank);
 
