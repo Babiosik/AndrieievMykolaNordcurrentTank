@@ -24,8 +24,7 @@ namespace Tanks
 
         private void Update()
         {
-            engineSoundSource.pitch = Mathf.Lerp(lowerPitch, higherPitch, directionMove.sqrMagnitude);
-            Debug.Log(engineSoundSource.pitch);
+            engineSoundSource.pitch = Mathf.Lerp(engineSoundSource.pitch, LouderPitch, Time.deltaTime * 4);
         }
 
         private void FixedUpdate()
@@ -42,5 +41,6 @@ namespace Tanks
         }
 
         public Vector2 DirectionVector { set => directionMove = value; }
+        public float LouderPitch => Mathf.Lerp(lowerPitch, higherPitch, directionMove.magnitude);
     }
 }
