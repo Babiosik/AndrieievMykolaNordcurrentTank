@@ -40,6 +40,12 @@ namespace Spawners
             return playerTank;
         }
 
+        protected override void RespawnTank(TankMediator tank)
+        {
+            base.RespawnTank(playerTank = tank);
+            tank.AppearanceController.StartSpawnAnimation();
+        }
+
         public override void DestroyTank(TankMediator tank)
         {
             base.DestroyTank(playerTank = tank);

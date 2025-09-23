@@ -30,7 +30,6 @@ namespace Spawners
             tank.transform.position = spawnPoint;
             tank.transform.rotation = GetRotation(spawnPoint);
             tank.gameObject.SetActive(true);
-            tank.AppearanceController.StartSpawnAnimation();
         }
 
         public virtual void DestroyTank(TankMediator tank)
