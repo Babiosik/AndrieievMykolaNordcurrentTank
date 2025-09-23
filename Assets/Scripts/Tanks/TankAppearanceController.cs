@@ -23,7 +23,7 @@ namespace Tanks
             foreach (var renderer in renderers)
                 renderer.color = new Color(1f, 1f, 1f, .5f);
 
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
 
             foreach (var renderer in renderers)
                 renderer.color = new Color(1f, 1f, 1f, 1f);

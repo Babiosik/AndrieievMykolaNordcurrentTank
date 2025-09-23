@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tankPrefabs:
   - {fileID: 4170520946863129972, guid: ee03d1872bc4ef341b27aa9af7fa82d2, type: 3}
+  - {fileID: 7736684286557173504, guid: ed193fd951506334380ada2a783cd45f, type: 3}
   destroyEffectSpawner: {fileID: 11400000, guid: 4269ed0c18d491c40aa9d93b619681bb, type: 2}
   respawnTime: 1
   spawnCount: 20
