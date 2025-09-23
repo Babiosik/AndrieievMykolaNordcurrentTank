@@ -18,11 +18,13 @@ namespace Tanks
 
         public void Shoot()
         {
+            if (!gameObject.activeInHierarchy)
+                return;
             BulletBase bullet = bulletSpawner.GetBullet();
             bullet.SetShooter(collider);
             bullet.transform.position = firePivot.position;
             bullet.transform.rotation = firePivot.rotation;
-            shootAudio.Play();
+            // shootAudio.Play();
         }
     }
 }
